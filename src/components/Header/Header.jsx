@@ -23,7 +23,7 @@ const Header = () => {
                 <div className='flex justify-between items-center py-2'>
                     <img src={logo} alt="" />
                     <div className='flex flex-col text-right'>
-                        <h1 onClick={() => setOpen(!open)} className='text-white cursor-pointer p-3 hover:bg-orange-800 md:hidden'>{!open ? <FontAwesomeIcon icon={faClose}></FontAwesomeIcon> : <FontAwesomeIcon icon={faNavicon}></FontAwesomeIcon>}</h1>
+                        <h1 onClick={() => setOpen(open)} className='text-white cursor-pointer p-3 hover:bg-orange-800 md:hidden'>{open ? <FontAwesomeIcon icon={faNavicon}></FontAwesomeIcon> : <FontAwesomeIcon icon={faClose}></FontAwesomeIcon>}</h1>
                         <div className={`${open ? 'hidden' : 'contents'} md:contents`}>
                             <div className='flex md:flex-row flex-col text-right'>
                                 {

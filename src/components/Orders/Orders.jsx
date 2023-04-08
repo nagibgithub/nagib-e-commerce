@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 // import './Orders.css';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import {useLoaderData} from 'react-router-dom';
 import OrderCard from './OrderCard';
-import { useState } from 'react';
-import { addToDb, deleteShoppingCart, removeFromDb, removeToDb } from '../../utilities/fakedb';
+import {useState} from 'react';
+import {addToDb, deleteShoppingCart, removeFromDb, removeToDb} from '../../utilities/fakedb';
 
 const Orders = () => {
     const addCard = useLoaderData()
@@ -50,9 +50,10 @@ const Orders = () => {
     // console.log(addCard);
     return (
         <div className='container grid grid-cols-5 m-auto'>
-            <div className='col-span-4' >
+            <div className='col-span-3' >
                 {
                     cart.map(pd => <OrderCard
+                        className=''
                         key={pd.id}
                         product={pd}
                         removeCartItem={removeCartItem}
@@ -61,7 +62,7 @@ const Orders = () => {
                     ></OrderCard>)
                 }
             </div>
-            <div className="col-span-1">
+            <div className="col-span-2">
                 <Cart
                     cart={cart}
                     clearCart={clearCart}

@@ -53,7 +53,7 @@ const Cart = ({cart, clearCart}) => {
             </div>
             <div className='button-div flex flex-col'>
                 <button onClick={clearCart} className='btn-clear bg-red-500 text-white border-red-500 border-2 hover:bg-white hover:text-red-500 rounded flex justify-between items-center h-14 px-5 text-lg mx-5 my-1'>Clear Cart  <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
-                <button className='btn-review bg-orange-500 text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mx-5 my-1'>Review Order  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+                <button className='btn-review bg-orange-500 hover text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mx-5 my-1'>Review Order  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </div>
         </div>
     );
