@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {addToDb, deleteShoppingCart, getShoppingCart} from '../../utilities/fakedb';
+import React, { useEffect, useState } from 'react';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 // import './Shop.css';
@@ -61,12 +61,11 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container container m-auto grid grid-cols-5'>
+        <div className='shop-container container m-auto grid grid-cols-5 relative'>
             <div className="products-container col-span-4">
                 <div className='grid grid-cols-3'>
                     {
                         products.map(product => <Product
-                            className=''
                             key={product.id}
                             product={product}
                             handleAddToCart={handleAddToCart}
