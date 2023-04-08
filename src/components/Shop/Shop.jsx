@@ -63,7 +63,11 @@ const Shop = () => {
     return (
         <div className='shop-container container m-auto grid grid-cols-5 relative'>
             <div className="products-container col-span-4">
-                <div className='grid grid-cols-3'>
+                <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
+                    <input className='px-5 py-2 w-full rounded-full' type="text" />
+                    <button className='px-2 cursor-pointer'>Search</button>
+                </div>
+                <div className='grid grid-cols-3 gap-6 justify-items-center'>
                     {
                         products.map(product => <Product
                             key={product.id}
