@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './Orders.css';
+// import './Orders.css';
 import Cart from '../Cart/Cart';
 import {useLoaderData} from 'react-router-dom';
 import OrderCard from './OrderCard';
@@ -49,8 +49,8 @@ const Orders = () => {
 
     // console.log(addCard);
     return (
-        <div className='shop-container'>
-            <div className={'order-card'} >
+        <div className='container grid grid-cols-5 m-auto'>
+            <div className='col-span-3' >
                 {
                     cart.map(pd => <OrderCard
                         key={pd.id}
@@ -61,7 +61,7 @@ const Orders = () => {
                     ></OrderCard>)
                 }
             </div>
-            <div className="cart-container">
+            <div className="col-span-2">
                 <Cart
                     cart={cart}
                     clearCart={clearCart}

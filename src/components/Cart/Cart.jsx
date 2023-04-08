@@ -1,5 +1,5 @@
 import React from 'react';
-import './Cart.css';
+// import './Cart.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCoffee, faClose, faTrashCan, faArrowAltCircleRight, faArrowRight} from '@fortawesome/free-solid-svg-icons'
 
@@ -27,34 +27,33 @@ const Cart = ({cart, clearCart}) => {
     const grandTotal = totalPrice + totalShipping + tax;
 
     return (
-        <div className='cart-body'>
+        <div className='cart-body bg-orange-200 p-4'>
             <div className='cart'>
-                <h4>Order Summary</h4>
-                <div>
+                <h4 className='text-center'>Order Summary</h4>
+                <div className='flex justify-between py-1'>
                     <p>Selected Items: </p>
                     <p>{quantity}</p>
                 </div>
-                <div>
+                <div className='flex justify-between py-1'>
                     <p>Total Price: </p>
                     <p>${totalPrice}</p>
                 </div>
-                <div>
+                <div className='flex justify-between py-1'>
                     <p>Shipping: </p>
                     <p>${totalShipping}</p>
                 </div>
-                <div>
+                <div className='flex justify-between py-1'>
                     <p>Tax: </p>
                     <p>${tax.toFixed(2)}</p>
                 </div>
-                <div>
+                <div className='flex justify-between py-1'>
                     <h3>Grand Total: </h3>
                     <h3>${grandTotal.toFixed(2)}</h3>
-
                 </div>
             </div>
-            <div className='button-div'>
-                <button onClick={clearCart} className='btn-clear'>Clear Cart  <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
-                <button className='btn-review'>Review Order  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
+            <div className='button-div flex flex-col'>
+                <button onClick={clearCart} className='btn-clear bg-red-500 text-white border-red-500 border-2 hover:bg-white hover:text-red-500 rounded flex justify-between items-center h-14 px-5 text-lg mx-5 my-1'>Clear Cart  <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
+                <button className='btn-review bg-orange-500 text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mx-5 my-1'>Review Order  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button>
             </div>
         </div>
     );

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <Home></Home>,
     children: [
       {
-        path: '/',
+        path: 'products',
         element: <Shop></Shop>
       },
       {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         loader: cartProductsLoader
       },
       {
-        path: 'inventory',
+        path: 'about',
         element: <Inventory></Inventory>
       },
       {

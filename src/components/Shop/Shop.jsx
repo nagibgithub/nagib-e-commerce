@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import React, {useEffect, useState} from 'react';
+import {addToDb, deleteShoppingCart, getShoppingCart} from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import './Shop.css';
+// import './Shop.css';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -61,17 +61,20 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container'>
-            <div className="products-container">
-                {
-                    products.map(product => <Product
-                        key={product.id}
-                        product={product}
-                        handleAddToCart={handleAddToCart}
-                    ></Product>)
-                }
+        <div className='shop-container container m-auto grid grid-cols-5'>
+            <div className="products-container col-span-4">
+                <div className='grid grid-cols-3'>
+                    {
+                        products.map(product => <Product
+                            className=''
+                            key={product.id}
+                            product={product}
+                            handleAddToCart={handleAddToCart}
+                        ></Product>)
+                    }
+                </div>
             </div>
-            <div className="cart-container">
+            <div className="cart-container col-span-1">
                 <Cart
                     cart={cart}
                     clearCart={clearCart}
