@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 // import './Shop.css';
 
 const Shop = () => {
@@ -64,7 +66,10 @@ const Shop = () => {
         <div className='shop-container container m-auto grid grid-cols-5 relative'>
             <div className="products-container col-span-4">
                 <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
-                    <input className='px-5 py-2 w-full rounded-full' type="text" />
+                    <div className='flex w-full items-center bg-white rounded-full'>
+                        <FontAwesomeIcon className='px-3 text-orange-300' icon={faSearch}></FontAwesomeIcon>
+                        <input className='px-5 py-2 w-full rounded-full' placeholder='Search Your Product' type="text" />
+                    </div>
                     <button className='px-2 cursor-pointer'>Search</button>
                 </div>
                 <div className='grid grid-cols-3 gap-6 justify-items-center'>
