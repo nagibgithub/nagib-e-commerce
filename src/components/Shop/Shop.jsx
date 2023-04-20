@@ -63,14 +63,14 @@ const Shop = () => {
     }
 
     return (
-        <div className='shop-container container m-auto grid grid-cols-5 relative'>
-            <div className="products-container col-span-4">
+        <div className='container m-auto grid grid-cols-5 relative'>
+            <div className="col-span-4">
                 <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
                     <div className='flex w-full items-center bg-white rounded-full'>
                         <FontAwesomeIcon className='px-3 text-orange-300' icon={faSearch}></FontAwesomeIcon>
-                        <input className='px-5 py-2 w-full rounded-full' placeholder='Search Your Product' type="text" />
+                        <input className='p-2 font-extralight text-lg w-full rounded-full focus:outline-none' placeholder='Search Your Product' type="text" />
                     </div>
-                    <button className='px-2 cursor-pointer'>Search</button>
+                    {/* <button className='px-2 cursor-pointer'>Search</button> */}
                 </div>
                 <div className='grid grid-cols-3 gap-6 justify-items-center'>
                     {
