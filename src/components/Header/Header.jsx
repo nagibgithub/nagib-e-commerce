@@ -20,7 +20,7 @@ const Header = () => {
             <div className='px-7 sm:px-8 lg:px-28 flex justify-between w-full'>
                 <Link to={'/'}><img className='my-5' src={logo} alt="" /></Link>
                 <div className='flex flex-col text-right justify-center'>
-                    <h1 onClick={() => setOpen(!open)} className='text-white cursor-pointer p-3 md:hidden'>{open ? <FontAwesomeIcon icon={faNavicon}></FontAwesomeIcon> : <FontAwesomeIcon icon={faClose}></FontAwesomeIcon>}</h1>
+                    <h1 onClick={() => setOpen(!open)} className='text-white cursor-pointer p-3 md:hidden text-3xl'>{open ? <FontAwesomeIcon icon={faNavicon}></FontAwesomeIcon> : <FontAwesomeIcon icon={faClose}></FontAwesomeIcon>}</h1>
                     <div className={`${ open ? 'hidden' : 'contents' } md:contents`}>
                         <div className='flex md:flex-row flex-col text-right'>
                             {
