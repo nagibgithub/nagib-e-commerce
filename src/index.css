@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+.form-field {
+    @apply my-10 mx-auto w-[500px] border-[#95A0A7] rounded-[5px] shadow-[-12px_12px_#ffe0b3] border hover:border-[#ff9900] hover:shadow-[-12px_12px_#ff9900]
+}
+
+.input-field {
+    @apply h-[55px] block border border-[#95a0a7] pl-2 py-1 mb-3 rounded-md w-full focus:outline-[#ff9900]
+}
+
+.label-field {
+    @apply w-full pl-2 py-[10px] text-[17px]
+}
+
+.login-title {
+    @apply text-center text-[35px]
+}
+
+.submit-button {
+    @apply bg-[#ffe0b3] w-full h-[55px] text-[21px] cursor-pointer hover:bg-[#ff9900] rounded focus:outline-[#ff9900] mb-5
+}
