@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import React, {useEffect, useState} from 'react';
+import {addToDb, deleteShoppingCart, getShoppingCart} from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowDown, faSearch} from '@fortawesome/free-solid-svg-icons'
 // import './Shop.css';
 
 const Shop = () => {
+    const [isTrue, setIsTrue] = useState(false);
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
 
@@ -63,8 +64,19 @@ const Shop = () => {
     }
 
     return (
-        <div className='container m-auto grid grid-cols-5 relative'>
-            <div className="col-span-4">
+        <div className='grid grid-cols-4 container m-auto'>
+            <div className={`${ isTrue ? 'transition-all -top-[260px] fixed right-0' :'transition-all top-[80px] fixed right-0'}`}>
+                <div className="w-60">
+                    <Cart
+                        cart={cart}
+                        clearCart={clearCart}
+                    ></Cart>
+                    <div onClick={() => setIsTrue(!isTrue)} className='py-2 bg-[#ff9900] mx-3 flex justify-center rounded-b-full cursor-pointer'>
+                        <button className='text-xl'><FontAwesomeIcon icon={faArrowDown} rotation={!isTrue ? 180 : ''} /></button>
+                    </div>
+                </div>
+            </div>
+            <div className='container m-auto col-span-3'>
                 <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
                     <div className='flex w-full items-center bg-white rounded-full'>
                         <FontAwesomeIcon className='px-3 text-orange-300' icon={faSearch}></FontAwesomeIcon>
@@ -72,7 +84,7 @@ const Shop = () => {
                     </div>
                     {/* <button className='px-2 cursor-pointer'>Search</button> */}
                 </div>
-                <div className='grid grid-cols-3 gap-6 justify-items-center'>
+                <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center'>
                     {
                         products.map(product => <Product
                             key={product.id}
@@ -81,12 +93,6 @@ const Shop = () => {
                         ></Product>)
                     }
                 </div>
-            </div>
-            <div className="cart-container col-span-1">
-                <Cart
-                    cart={cart}
-                    clearCart={clearCart}
-                ></Cart>
             </div>
         </div>
     );

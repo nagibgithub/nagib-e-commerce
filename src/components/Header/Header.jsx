@@ -16,7 +16,7 @@ const Header = () => {
     ];
 
     return (
-        <nav className='bg-[#1C2B35] flex items-center'>
+        <nav className='bg-[#1C2B35] flex items-center sticky top-0 z-10'>
             <div className='px-7 sm:px-8 lg:px-28 flex justify-between w-full'>
                 <Link to={'/'}><img className='my-5' src={logo} alt="" /></Link>
                 <div className='flex flex-col text-right justify-center'>

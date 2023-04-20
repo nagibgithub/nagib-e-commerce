@@ -24,10 +24,10 @@ const Login = () => {
                     <input className='submit-button' type="submit" value={'Login'}/>
                 </form>
                 <h1 className='text-center text-sm mb-5'>New to Nagib E-Commerce?<Link className='text-[#ff9900]' to={'/signup'}> Create New Account</Link> first</h1>
-                <div className='grid grid-cols-7 items-center mb-5'>
-                    <hr className='col-span-3 border border-[#95A0A7]'/>
+                <div className='grid grid-cols-9 items-center mb-5'>
+                    <hr className='col-span-4 border border-[#95A0A7]'/>
                     <h2 className='col-span-1 text-center text-[#323536]'>or</h2>
-                    <hr className='col-span-3 border border-[#95A0A7]'/>
+                    <hr className='col-span-4 border border-[#95A0A7]'/>
                 </div>
                 <button className='w-full flex items-center justify-center border border-[#95a0a7] h-14 rounded text-lg'><img className='w-8 mr-2' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="" />Continue with Google</button>
             </div>
