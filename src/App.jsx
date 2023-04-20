@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header/Header'
-import Shop from './components/Shop/Shop'
+import React from 'react';
+import Header from './components/Header/Header';
+import {Outlet} from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Header></Header>
-      <Shop></Shop>
+      <Outlet></Outlet>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

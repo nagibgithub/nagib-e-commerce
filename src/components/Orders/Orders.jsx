@@ -10,7 +10,7 @@ const Orders = () => {
     const addCard = useLoaderData()
 
     const [cart, setCart] = useState(addCard)
-    console.log(cart);
+    // console.log(cart);
     const removeCartItem = id => {
         const newCard = cart.filter(pd => pd.id !== id)
         removeFromDb(id)

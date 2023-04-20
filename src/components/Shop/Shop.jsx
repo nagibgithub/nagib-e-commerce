@@ -68,7 +68,7 @@ const Shop = () => {
                 <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
                     <div className='flex w-full items-center bg-white rounded-full'>
                         <FontAwesomeIcon className='px-3 text-orange-300' icon={faSearch}></FontAwesomeIcon>
-                        <input className='p-2 font-extralight text-lg w-full rounded-full focus:outline-none' placeholder='Search Your Product' type="text" />
+                        <input className='p-2 text-lg w-full rounded-full focus:outline-none' placeholder='Search Your Product' type="text" />
                     </div>
                     {/* <button className='px-2 cursor-pointer'>Search</button> */}
                 </div>
