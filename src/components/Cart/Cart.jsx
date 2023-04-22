@@ -28,7 +28,7 @@ const Cart = ({cart, clearCart}) => {
     const grandTotal = totalPrice + totalShipping + tax;
 
     return (
-        <div className='bg-orange-200 px-3 pt-2 mx-3'>
+        <div className='bg-orange-200 px-3 pt-2 mx-auto'>
             <div className=''>
                 <h4 className='text-center text-lg font-bold'>Order Summary</h4>
                 <hr className='border border-black' />
@@ -57,7 +57,6 @@ const Cart = ({cart, clearCart}) => {
             </div>
             <div className='flex flex-col'>
                 <button onClick={clearCart} className='bg-red-500 text-white border-red-500 border-2 hover:bg-white hover:text-red-500 rounded flex justify-between items-center h-14 px-5 text-lg mt-3 my-1'>Clear Cart  <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></button>
-                <Link className='bg-orange-500 hover text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mb-3' to={'/orders'}><button className='flex justify-between w-full items-center'>Review Order  <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button></Link>
             </div>
         </div>
     );

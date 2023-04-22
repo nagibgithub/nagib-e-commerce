@@ -3,7 +3,8 @@ import {addToDb, deleteShoppingCart, getShoppingCart} from '../../utilities/fake
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faArrowDown, faSearch} from '@fortawesome/free-solid-svg-icons'
+import {faArrowDown, faArrowRight, faArrowUp, faSearch} from '@fortawesome/free-solid-svg-icons'
+import {Link} from 'react-router-dom';
 // import './Shop.css';
 
 const Shop = () => {
@@ -64,19 +65,8 @@ const Shop = () => {
     }
 
     return (
-        <div className='grid grid-cols-4 container m-auto'>
-            <div className={`${ isTrue ? 'transition-all -top-[260px] fixed right-0' :'transition-all top-[80px] fixed right-0'}`}>
-                <div className="w-60">
-                    <Cart
-                        cart={cart}
-                        clearCart={clearCart}
-                    ></Cart>
-                    <div onClick={() => setIsTrue(!isTrue)} className='py-2 bg-[#ff9900] mx-3 flex justify-center rounded-b-full cursor-pointer'>
-                        <button className='text-xl'><FontAwesomeIcon icon={faArrowDown} rotation={!isTrue ? 180 : ''} /></button>
-                    </div>
-                </div>
-            </div>
-            <div className='container m-auto col-span-3'>
+        <div className='flex flex-col-reverse lg:grid lg:grid-cols-5 container m-auto'>
+            <div className='mt-12 lg:mt-0 container m-auto lg:col-span-4'>
                 <div className='bg-orange-200 rounded-full text-center m-5 p-2 flex'>
                     <div className='flex w-full items-center bg-white rounded-full'>
                         <FontAwesomeIcon className='px-3 text-orange-300' icon={faSearch}></FontAwesomeIcon>
@@ -94,6 +84,16 @@ const Shop = () => {
                     }
                 </div>
             </div>
+            <div className="lg:w-full lg:mt-0 mt-3 mx-3 h-max shadow-lg lg:sticky lg:top-0">
+                <Cart
+                    cart={cart}
+                    clearCart={clearCart}
+                ></Cart>
+                <div className='mx-auto px-3 py-3 bg-[#ffe0b3]'>
+                    <Link className='bg-orange-500 hover text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mb-3' to={'/check'}><button className='flex justify-between w-full items-center'>Check Out <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button></Link>
+                </div>
+            </div>
+            <a className='' href="#"><button className=' z-50 w-16 h-16 bg-[#ff9900] rounded-full fixed bottom-0 right-0'><FontAwesomeIcon icon={faArrowUp} /></button></a>
         </div>
     );
 };

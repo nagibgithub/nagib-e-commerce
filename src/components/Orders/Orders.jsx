@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react';
 // import './Orders.css';
 import Cart from '../Cart/Cart';
-import {useLoaderData} from 'react-router-dom';
+import {Link, useLoaderData} from 'react-router-dom';
 import OrderCard from './OrderCard';
 import {useState} from 'react';
 import {addToDb, deleteShoppingCart, removeFromDb, removeToDb} from '../../utilities/fakedb';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 const Orders = () => {
     const addCard = useLoaderData()
@@ -67,6 +69,7 @@ const Orders = () => {
                     cart={cart}
                     clearCart={clearCart}
                 ></Cart>
+                <Link className='bg-orange-500 hover text-white border-orange-500 border-2 hover:bg-white hover:text-orange-500 rounded flex justify-between items-center h-14 px-5 text-lg mb-3' to={'/check'}><button className='flex justify-between w-full items-center'>Check Out <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon></button></Link>
             </div>
         </div>
     );
